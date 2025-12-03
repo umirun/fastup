@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Hush , Salo } from './index.jsx';
+
+// ---- ASOSIY APP ----
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      < Hush />
+      <Salo name="Umrbek" />
+      <Salo name="Umrbek1" />
+      <Salo name="UMrbek2" />
     </div>
   );
+}  
+  function ToggleText() {
+    const [text, setText] = useState("4.Salom");
+    return (
+      <div>
+        <h2>{text}</h2>
+        <button
+          onClick={() =>
+            setText(
+              text === "4.Salom"
+                ? "4.Xayr!"
+                : "4.Xayr"
+            )
+          }
+        >
+          Almashtir
+        </button>
+      </div>
+    );
 }
 
 export default App;
